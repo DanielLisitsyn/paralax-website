@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="pimg1">
+        <div class="ptext">
+            <span class="border">
+              City Website
+            </span>
+        </div>
+    </div>
+    
+    <section class="section section-light">
+    <h2>Section One</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+        Laboriosam eos quaerat blanditiis, sed expedita maiores libero 
+        distinctio obcaecati ea, sapiente illum unde voluptatem quidem in 
+        velit ullam id, repudiandae aspernatur ut itaque est voluptatibus 
+        dignissimos rem nisi. Praesentium reprehenderit amet excepturi similique
+        iente consequuntur maxime voluptas itaque? Incidunt modi obcaecati 
+        perspiciatis? Nam, veniam dicta voluptatibus fugiat aut ut laudantium 
+        commodi aspernatur sunt enim nostrum consequatur deserunt. Sint iste, 
+        quas recusandae sit suscipit ullam ipsam deleniti animi magni, eum eaque 
+        saepe optio? Ipsum impedit placeat, explicabo nihil consectetur cupiditate 
+        eligendi porro reprehenderit laudantium cum asperiores magni delectus libero 
+        reiciendis? Quas, incidunt?
+    </p>
+    </section>
+
+    <div class="pimg2">
+        <div class="ptext">
+            <span class="border trans">
+              Image Two Text
+            </span>
+        </div>
+    </div>
+
+
+    <section class="section section-dark">
+        <h2>Section Two</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Laboriosam eos quaerat blanditiis, sed expedita maiores libero 
+            distinctio obcaecati ea, sapiente illum unde voluptatem quidem in 
+            velit ullam id, repudiandae aspernatur ut itaque est voluptatibus 
+            dignissimos rem nisi. Praesentium reprehenderit amet excepturi similique
+            iente consequuntur maxime voluptas itaque? Incidunt modi obcaecati 
+            perspiciatis? Nam, veniam dicta voluptatibus fugiat aut ut laudantium 
+            commodi aspernatur sunt enim nostrum consequatur deserunt. Sint iste, 
+            quas recusandae sit suscipit ullam ipsam deleniti animi magni, eum eaque 
+            saepe optio? 
+        </p>
+        </section>
+
+    <div class="pimg3">
+        <div class="ptext">
+            <span class="border trans">
+              Image Three Text
+            </span>
+        </div>
+    </div>        
+
+    <section class="section section-dark">
+        <h2>Section Three</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Laboriosam eos quaerat blanditiis, sed expedita maiores libero 
+            distinctio obcaecati ea, sapiente illum unde voluptatem quidem in 
+            velit ullam id, repudiandae aspernatur ut itaque est voluptatibus 
+            dignissimos rem nisi. Praesentium reprehenderit amet excepturi similique
+            iente consequuntur maxime voluptas itaque? Incidunt modi obcaecati 
+            perspiciatis? Nam, veniam dicta voluptatibus fugiat aut ut laudantium 
+            commodi aspernatur sunt enim nostrum consequatur deserunt. Sint iste, 
+            quas recusandae sit suscipit ullam ipsam deleniti animi magni, eum eaque 
+            saepe optio? 
+        </p>
+    </section>
+
+    <div class="pimg1">
+        <div class="ptext">
+            <span class="border">
+              City Website
+            </span>
+        </div>
+    </div>
+    
+
+     <center class="image-slider">
+        <section class="section-dark2">
+        <div class="slider">
+            <div class="image">
+                <img src="img/urban1.jpg" alt="">
+            </div>
+            
+            <div class="image">
+                <img src="img/urban2.jpg" alt="">
+            </div>
+            
+            <div class="image">
+                <img src="img/urban3.jpg" alt="">
+            </div>
+
+            <div class="image">
+                <img src="img/urban4.jpg" alt="">
+            </div>
+
+            <div class="image">
+                <img src="img/urban5.jpg" alt="">
+            </div>
+            
+        <div class="left"  onclick="manualSlide(-1)"> < <i class="fas fa-chevron-left"></i></div>
+        <div class="right"  onclick="manualSlide(1)"> > <i class="fas fa-chevron-right"></i></div>
+       
+        </div>
+    </section>
+    </center>
+
+<script>
+    let index = 0;
+    let images;
+    let time;
+
+    autoSlide();
+    function autoSlide(n) {
+        images = document.getElementsByClassName('image');
+
+        for (let i = 0; i < images.length; i++) {
+            images[i].style.display = "none";    
+        }
+
+        if(index > images.length - 1) {
+            index = 0;
+        }
+        images[index].style.display = "block";
+        index++;
+
+        time = setTimeout(autoSlide, 2500);
+}
+
+function manualSlide(n) {
+    
+    clearTimeout(time);
+    newIndex = index + n;
+    autoSlide(newIndex);
+}
+
+</script>
+
+</body>
+</html>
